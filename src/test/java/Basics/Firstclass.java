@@ -1,8 +1,12 @@
 package Basics;
+import java.time.Duration;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Firstclass {
 	WebDriver driver; // open Edge browser
@@ -32,6 +36,16 @@ public class Firstclass {
 		WebElement username = driver.findElement(By.id("email"));
 		username.sendKeys("sathish kumar");
 		Thread.sleep(1000);
+		
+		//implicit wait
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+		
+		//Explicit wait
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
+		wait.until(ExpectedConditions.elementToBeClickable(By.name("login")));
+		
+		//fluent wait
+		
 		username.clear();
 		driver.findElement(By.name("email")).sendKeys("after clear");
 		//driver.findElement(By.linkText("Forgotten password?")).click();
