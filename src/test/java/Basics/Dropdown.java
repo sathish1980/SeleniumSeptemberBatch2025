@@ -9,11 +9,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 public class Dropdown {
 	
 	WebDriver driver;
 	
+	@Test
 	public void launchFB() throws InterruptedException
 	{
 		driver = new ChromeDriver(); // open Edge browser
@@ -36,11 +38,24 @@ public class Dropdown {
 		
 		
 	}
+	
+	@Test
+	public void secindTst()
+	{
+		System.out.println("checking");
+		throw new ArithmeticException("Error");
+	}
+	
+	@Test
+	public void thirdTest()
+	{
+		System.out.println("checking");
+	}
 
-	public static void main(String[] args) throws InterruptedException {
+	/*public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		Dropdown d = new Dropdown();
 		d.launchFB();
-	}
+	}*/
 
 }
