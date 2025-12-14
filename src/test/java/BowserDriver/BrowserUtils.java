@@ -10,7 +10,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class BrowserUtils {
 
-	public static WebDriver driver;
+	public static WebDriver Browser;
 	public static ExtentSparkReporter htmlReporter;
 	public static ExtentReports extent;
 	//helps to generate the logs in test report.
@@ -22,11 +22,11 @@ public class BrowserUtils {
 	{
 		if(browserName.equalsIgnoreCase("Chrome"))
 		{
-		driver = new ChromeDriver(); // open Edge browser
+			Browser = new ChromeDriver(); // open Edge browser
 		}
 		else if(browserName.equalsIgnoreCase("Edge"))
 		{
-		driver = new EdgeDriver(); // open Edge browser
+			Browser = new EdgeDriver(); // open Edge browser
 		}
 		else
 		{
@@ -49,12 +49,12 @@ public class BrowserUtils {
 	
 	public void LaunchtheApplication(String url)
 	{
-		driver.get(url);
-		driver.manage().window().maximize();
+		Browser.get(url);
+		Browser.manage().window().maximize();
 	}
 	
 	public void CloseBrowser() {
 		//ClosetheReport();
-		driver.quit();
+		Browser.quit();
 	}
 }
